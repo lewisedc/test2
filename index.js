@@ -18,4 +18,6 @@ app.post("/", async (req, res) => {
   res.json(req.body);
 });
 
-app.listen("80", () => console.log("Server listening on port 80"));
+const port = process.env.PORT ?? 9000;
+
+app.listen(port, () => console.log(`Server listening on port ${port}`));
