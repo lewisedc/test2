@@ -11,11 +11,12 @@ app.get("/status", (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-  console.log(req.body);
+  const items = req.body.split(",").length;
+  console.log(items);
 
   await sleep(1000 * 2);
 
-  res.json(req.body);
+  res.json(items);
 });
 
 const port = process.env.PORT ?? 9000;
